@@ -1,0 +1,65 @@
+{
+  "graph": {
+    "Start": [
+      "Y"
+    ],
+    "Y": [
+      "Z"
+    ],
+    "Z": [
+      "AA",
+      "AB"
+    ],
+    "AA": [
+      "Y"
+    ],
+    "AB": [
+      "AC"
+    ],
+    "AC": [
+      "AD",
+      "AE"
+    ],
+    "AD": [
+      "AG"
+    ],
+    "AE": [
+      "AF"
+    ],
+    "AF": [
+      "Y"
+    ],
+    "AG": [
+      "AH"
+    ],
+    "AH": [
+      "AI"
+    ],
+    "AI": []
+  },
+  "constraints": {
+    "negative": [],
+    "positive": [],
+    "once": [
+      {
+        "pair": [
+          "AC",
+          "Y"
+        ]
+      },
+      {
+        "pair": [
+          "AA",
+          "Y"
+        ]
+      },
+      {
+        "pair": [
+          "AC",
+          "AI"
+        ]
+      }
+    ],
+    "max_once": []
+  }
+}

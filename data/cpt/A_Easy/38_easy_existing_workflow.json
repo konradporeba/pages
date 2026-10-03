@@ -1,0 +1,99 @@
+{
+  "graph": {
+    "START": [
+      "INIT"
+    ],
+    "INIT": [
+      "SENSORS"
+    ],
+    "SENSORS": [
+      "STORE"
+    ],
+    "STORE": [
+      "WATER_CHECK",
+      "IRR_CHECK",
+      "USER_REQ"
+    ],
+    "WATER_CHECK": [
+      "STOP",
+      "PUMP_ON"
+    ],
+    "WATER_SENSOR": [
+      "WATER_CHECK"
+    ],
+    "PUMP_ON": [
+      "WATER_SENSOR"
+    ],
+    "IRR_CHECK": [
+      "STOP",
+      "SPRINK_ON"
+    ],
+    "SPRINK_ON": [
+      "IRRIGATE"
+    ],
+    "IRRIGATE": [
+      "SPRINK_OFF"
+    ],
+    "SPRINK_OFF": [
+      "STOP"
+    ],
+    "USER_REQ": [
+      "STOP",
+      "AUTH_CHECK"
+    ],
+    "AUTH_CHECK": [
+      "GRANT1",
+      "DENY1"
+    ],
+    "GRANT1": [
+      "REQ_LOGIN"
+    ],
+    "DENY1": [
+      "STOP"
+    ],
+    "REQ_LOGIN": [
+      "CRED_CHECK"
+    ],
+    "CRED_CHECK": [
+      "GRANT2",
+      "DENY2"
+    ],
+    "GRANT2": [
+      "PROCESS"
+    ],
+    "DENY2": [
+      "STOP"
+    ],
+    "PROCESS": [
+      "STOP"
+    ],
+    "STOP": []
+  },
+  "constraints": {
+    "negative": [],
+    "positive": [
+      {
+        "pair": [
+          "STORE",
+          "SPRINK_ON"
+        ]
+      }
+    ],
+    "once": [
+      {
+        "pair": [
+          "AUTH_CHECK",
+          "DENY1"
+        ]
+      }
+    ],
+    "max_once": [
+      {
+        "pair": [
+          "WATER_CHECK",
+          "PUMP_ON"
+        ]
+      }
+    ]
+  }
+}

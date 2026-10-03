@@ -1,0 +1,92 @@
+{
+  "graph": {
+    "Start": [
+      "BK"
+    ],
+    "BK": [
+      "BL"
+    ],
+    "BL": [
+      "BM",
+      "BN"
+    ],
+    "BM": [
+      "BO",
+      "BP"
+    ],
+    "BN": [],
+    "BO": [
+      "BW",
+      "BN"
+    ],
+    "BP": [
+      "BO",
+      "BQ"
+    ],
+    "BQ": [
+      "BM",
+      "BR"
+    ],
+    "BR": [
+      "BS",
+      "BT",
+      "BM"
+    ],
+    "BS": [
+      "BU"
+    ],
+    "BT": [
+      "BV"
+    ],
+    "BU": [
+      "BV"
+    ],
+    "BV": [
+      "BZ"
+    ],
+    "BW": [
+      "BX"
+    ],
+    "BX": [
+      "BW",
+      "BY"
+    ],
+    "BY": [
+      "BU"
+    ],
+    "BZ": [
+      "CA",
+      "BN"
+    ],
+    "CA": [
+      "CB",
+      "CC"
+    ],
+    "CB": [
+      "BN"
+    ],
+    "CC": [
+      "BN"
+    ]
+  },
+  "constraints": {
+    "negative": [
+      {
+        "pair": [
+          "BO",
+          "BV"
+        ]
+      }
+    ],
+    "positive": [],
+    "once": [],
+    "max_once": [
+      {
+        "pair": [
+          "BS",
+          "BV"
+        ]
+      }
+    ]
+  }
+}

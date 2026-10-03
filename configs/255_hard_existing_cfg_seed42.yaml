@@ -1,0 +1,9 @@
+graph_path: ../data/cpt/C_Hard/255_hard_existing_cfg.json
+constraints:
+- negative
+agent: typesafe
+provider: openrouter
+start: START
+end: B0
+max_steps: 1000
+seed: 42

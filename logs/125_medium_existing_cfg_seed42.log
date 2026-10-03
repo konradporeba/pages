@@ -1,0 +1,245 @@
+
+Step 1 | target: —
+  Move: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B33 → B31 → B30 → B19 → B18 → B16 → B15 → B14 → B13 → B11 → B10
+  New edges: B11 → B10, B13 → B11, B14 → B13, B15 → B14, B16 → B15, B18 → B16, B19 → B18, B30 → B19, B31 → B30, B33 → B31, B35 → B33, B39 → B35, B40 → B39, B41 → B40, B42 → B41, B43 → B42, B44 → B43, B45 → B44, B47 → B45, B49 → B47, B50 → B49, B52 → B50, START → B52
+  Completed tests: covered=0/78 | uncovered=78
+  Including the current path: covered=23/78 | uncovered=55
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 6
+
+Step 2 | target: —
+  Move: B10 → B14 → B9 → B2 → B41 → B1 → B0
+  New edges: B1 → B0, B10 → B14, B14 → B9, B2 → B41, B41 → B1, B9 → B2
+  Completed tests: covered=29/78 | uncovered=49
+  Including the current path: covered=29/78 | uncovered=49
+  Violations (suite + current path): 0 | negative=0
+  Test completed: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B33 → B31 → B30 → B19 → B18 → B16 → B15 → B14 → B13 → B11 → B10 → B14 → B9 → B2 → B41 → B1 → B0
+
+Step 3 | target: —
+  Move: START → B52 → B51
+  New edges: B52 → B51
+  Completed tests: covered=29/78 | uncovered=49
+  Including the current path: covered=30/78 | uncovered=48
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 3
+
+Step 4 | target: —
+  Move: B51 → B50 → B48 → B0
+  New edges: B48 → B0, B50 → B48, B51 → B50
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=33/78 | uncovered=45
+  Violations (suite + current path): 0 | negative=0
+  Test completed: START → B52 → B51 → B50 → B48 → B0
+
+Step 5 | target: —
+  Move: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B34 → B8 → B6 → B4 → B2
+  New edges: B34 → B8, B35 → B34, B4 → B2, B6 → B4, B8 → B6
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=38/78 | uncovered=40
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 3
+
+Step 6 | target: —
+  Move: B2 → B41 → B40 → B39 → B35 → B33 → B32 → B30 → B19 → B17 → B16 → B15 → B14
+  New edges: B17 → B16, B19 → B17, B32 → B30, B33 → B32
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=42/78 | uncovered=36
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 7 | target: —
+  Move: B14 → B13 → B12
+  New edges: B13 → B12
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=43/78 | uncovered=35
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 8 | target: —
+  Move: B12 → B9 → B2 → B41 → B40 → B38 → B36
+  New edges: B12 → B9, B38 → B36, B40 → B38
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=46/78 | uncovered=32
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 9
+
+Step 9 | target: —
+  Move: B36 → B35 → B34 → B8 → B7 → B3 → B2 → B41
+  New edges: B3 → B2, B36 → B35, B7 → B3, B8 → B7
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=50/78 | uncovered=28
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 2
+
+Step 10 | target: —
+  Move: B41 → B40 → B38 → B37
+  New edges: B38 → B37
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=51/78 | uncovered=27
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 9
+
+Step 11 | target: —
+  Move: B37 → B35 → B34 → B8 → B6 → B5
+  New edges: B37 → B35, B6 → B5
+  Completed tests: covered=33/78 | uncovered=45
+  Including the current path: covered=53/78 | uncovered=25
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 12 | target: —
+  Move: B5 → B4 → B2 → B41 → B1 → B0
+  New edges: B5 → B4
+  Completed tests: covered=54/78 | uncovered=24
+  Including the current path: covered=54/78 | uncovered=24
+  Violations (suite + current path): 0 | negative=0
+  Test completed: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B34 → B8 → B6 → B4 → B2 → B41 → B40 → B39 → B35 → B33 → B32 → B30 → B19 → B17 → B16 → B15 → B14 → B13 → B12 → B9 → B2 → B41 → B40 → B38 → B36 → B35 → B34 → B8 → B7 → B3 → B2 → B41 → B40 → B38 → B37 → B35 → B34 → B8 → B6 → B5 → B4 → B2 → B41 → B1 → B0
+
+Step 13 | target: —
+  Move: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B33 → B32 → B30 → B29 → B28 → B27 → B25 → B24 → B22 → B21
+  New edges: B22 → B21, B24 → B22, B25 → B24, B27 → B25, B28 → B27, B29 → B28, B30 → B29
+  Completed tests: covered=54/78 | uncovered=24
+  Including the current path: covered=61/78 | uncovered=17
+  Violations (suite + current path): 1 | negative=1
+  Hops to the end: 10
+
+Step 14 | target: —
+  Move: B21 → B28 → B26 → B25 → B20 → B15 → B9
+  New edges: B15 → B9, B20 → B15, B21 → B28, B25 → B20, B26 → B25, B28 → B26
+  Completed tests: covered=54/78 | uncovered=24
+  Including the current path: covered=67/78 | uncovered=11
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 4
+
+Step 15 | target: —
+  Move: B9 → B2 → B41 → B1 → B0
+  New edges: —
+  Completed tests: covered=67/78 | uncovered=11
+  Including the current path: covered=67/78 | uncovered=11
+  Violations (suite + current path): 2 | negative=2
+  Test completed: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B33 → B32 → B30 → B29 → B28 → B27 → B25 → B24 → B22 → B21 → B28 → B26 → B25 → B20 → B15 → B9 → B2 → B41 → B1 → B0
+
+Step 16 | target: B45 → B0
+  Move: START → B52 → B50 → B49 → B47 → B46
+  New edges: B47 → B46
+  Completed tests: covered=67/78 | uncovered=11
+  Including the current path: covered=68/78 | uncovered=10
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 2
+
+Step 17 | target: B45 → B0
+  Move: B46 → B45 → B0
+  New edges: B45 → B0, B46 → B45
+  Completed tests: covered=70/78 | uncovered=8
+  Including the current path: covered=70/78 | uncovered=8
+  Violations (suite + current path): 2 | negative=2
+  Test completed: START → B52 → B50 → B49 → B47 → B46 → B45 → B0
+
+Step 18 | target: —
+  Move: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B34
+  New edges: —
+  Completed tests: covered=70/78 | uncovered=8
+  Including the current path: covered=70/78 | uncovered=8
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 7
+
+Step 19 | target: B7 → B6
+  Move: B34 → B8 → B7
+  New edges: —
+  Completed tests: covered=70/78 | uncovered=8
+  Including the current path: covered=70/78 | uncovered=8
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 5
+
+Step 20 | target: B7 → B6
+  Move: B7 → B6 → B4
+  New edges: B7 → B6
+  Completed tests: covered=70/78 | uncovered=8
+  Including the current path: covered=71/78 | uncovered=7
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 4
+
+Step 21 | target: —
+  Move: B4 → B2 → B41 → B1 → B0
+  New edges: —
+  Completed tests: covered=71/78 | uncovered=7
+  Including the current path: covered=71/78 | uncovered=7
+  Violations (suite + current path): 2 | negative=2
+  Test completed: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B34 → B8 → B7 → B6 → B4 → B2 → B41 → B1 → B0
+
+Step 22 | target: B44 → B0
+  Move: START → B52 → B50 → B49 → B47 → B45 → B44
+  New edges: —
+  Completed tests: covered=71/78 | uncovered=7
+  Including the current path: covered=71/78 | uncovered=7
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 1
+
+Step 23 | target: B44 → B0
+  Move: B44 → B0
+  New edges: B44 → B0
+  Completed tests: covered=72/78 | uncovered=6
+  Including the current path: covered=72/78 | uncovered=6
+  Violations (suite + current path): 2 | negative=2
+  Test completed: START → B52 → B50 → B49 → B47 → B45 → B44 → B0
+
+Step 24 | target: —
+  Move: START → B52 → B50 → B49 → B47 → B45 → B44 → B43 → B42 → B41 → B40 → B39 → B35 → B34
+  New edges: —
+  Completed tests: covered=72/78 | uncovered=6
+  Including the current path: covered=72/78 | uncovered=6
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 7
+
+Step 25 | target: B34 → B33
+  Move: B34 → B33 → B31 → B30 → B19 → B17 → B16 → B15 → B14 → B13 → B12
+  New edges: B34 → B33
+  Completed tests: covered=72/78 | uncovered=6
+  Including the current path: covered=73/78 | uncovered=5
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 5
+
+Step 26 | target: —
+  Move: B12 → B11
+  New edges: B12 → B11
+  Completed tests: covered=72/78 | uncovered=6
+  Including the current path: covered=74/78 | uncovered=4
+  Violations (suite + current path): 2 | negative=2
+  Hops to the end: 7
+Traceback (most recent call last):
+  File "/Users/konrad/Desktop/studia_UJ/doktorat/projekty/ACPC/run.py", line 144, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/konrad/Desktop/studia_UJ/doktorat/projekty/ACPC/run.py", line 130, in main
+    run_agent(
+  File "/Users/konrad/Desktop/studia_UJ/doktorat/projekty/ACPC/gym.py", line 150, in run_agent
+    choice = agent.choose_action(prompt, previews)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/Desktop/studia_UJ/doktorat/projekty/ACPC/agent/openrouter_agent.py", line 63, in choose_action
+    payload = json.load(response)
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/http/client.py", line 460, in read
+    return self._read_chunked(amt)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/http/client.py", line 583, in _read_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/http/client.py", line 566, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/http/client.py", line 526, in _read_next_chunk_size
+    line = self.fp.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/ssl.py", line 1311, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/konrad/anaconda3/lib/python3.11/ssl.py", line 1167, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out

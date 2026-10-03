@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logs</title>
+<style>
+:root { color-scheme: light; --ink: #1c1c1c; --muted: #5c5c5c; --line: #e4e4e4; --bg: #fafafa; --green: #1f7a4d; --green-soft: #e7f4ec; --amber: #8a5a00; --amber-soft: #fff6e5; --red: #9d2c2c; --red-soft: #fdecec; --track: #ececec; --total: #b9b9b9; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: white; }
+header, main, footer { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+header { padding-top: 28px; }
+nav { display: flex; gap: 16px; margin: 8px 0 0; }
+nav a { color: var(--ink); }
+h1 { font-size: 28px; line-height: 1.2; margin: 12px 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+p, li { color: var(--ink); }
+.muted, figcaption, footer { color: var(--muted); font-size: 14px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+.stat { background: var(--bg); padding: 14px 16px; }
+.stat b { display: block; font-size: 28px; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+.note { background: var(--amber-soft); padding: 12px 14px; margin: 16px 0 8px; }
+.note strong { display: block; margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.ok td { background: var(--green-soft); }
+tr.warn td { background: var(--amber-soft); }
+tr.bad td { background: var(--red-soft); }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; }
+.tag.ok { background: #d8efe2; color: var(--green); }
+.tag.warn { background: #ffe8bf; color: var(--amber); }
+.tag.bad { background: #f8d4d4; color: var(--red); }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
+.swatch { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.swatch.covered { background: var(--green); }
+.swatch.total { background: var(--total); }
+.swatch.time { background: #3d5a80; }
+.swatch.walk { background: var(--amber); }
+.chart { display: grid; gap: 8px; margin: 8px 0 4px; }
+.row { display: grid; grid-template-columns: 42px 1fr; gap: 8px; align-items: center; }
+.ylab { font-size: 13px; color: var(--muted); text-align: right; }
+.tracks { display: grid; gap: 3px; }
+.track { background: var(--track); height: 14px; }
+.bar { height: 14px; }
+.bar.covered { background: var(--green); }
+.bar.total { background: var(--total); }
+.bar.time { background: #3d5a80; }
+.bar.walk { background: var(--amber); }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+a { color: #1d4e89; }
+footer { padding: 28px 20px 40px; }
+pre { white-space: pre-wrap; word-break: break-word; font: 13px/1.45 ui-monospace, monospace; background: var(--bg); padding: 16px; }
+ul.files { padding-left: 18px; }
+ul.files li { margin: 4px 0; }
+@media (max-width: 800px) {
+  .stats, .columns { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="index.html">Results</a>
+  <a href="logs.html">Logs</a>
+  <a href="configs.html">Configs</a>
+  <a href="dataset.html">CPT dataset</a>
+</nav>
+</header>
+<main>
+<h1>Logs</h1><ul class="files"><li><a href="logs/183_medium_existing_cfg_seed42.log.html">183 medium</a> · <a href="logs/183_medium_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/247_hard_existing_cfg_seed42.log.html">247 hard</a> · <a href="logs/247_hard_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/255_hard_existing_cfg_seed42.log.html">255 hard</a> · <a href="logs/255_hard_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/257_hard_existing_cfg_seed42.log.html">257 hard</a> · <a href="logs/257_hard_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/209_hard_existing_cfg_seed42.log.html">209 hard</a> · <a href="logs/209_hard_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/125_medium_existing_cfg_seed42.log.html">125 medium</a> · <a href="logs/125_medium_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/223_hard_existing_cfg_seed42.log.html">223 hard</a> · <a href="logs/223_hard_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/242_hard_existing_cfg_seed42.log.html">242 hard</a> · <a href="logs/242_hard_existing_cfg_seed42.log">raw log</a></li><li><a href="logs/289_hard_existing_cfg_seed42.log.html">289 hard</a> · <a href="logs/289_hard_existing_cfg_seed42.log">raw log</a></li></ul>
+</main>
+<footer>Source: negative-constraint runs on 3 Oct 2026. Seed 42. Model typesafe/jev-router via OpenRouter chat completions. Constraint group: negative.</footer>
+</body>
+</html>

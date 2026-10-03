@@ -1,0 +1,106 @@
+{
+  "graph": {
+    "Start": [
+      "GA"
+    ],
+    "GA": [
+      "GB"
+    ],
+    "GB": [
+      "GC",
+      "GD",
+      "GE"
+    ],
+    "GC": [
+      "GF"
+    ],
+    "GD": [
+      "GJ",
+      "GK"
+    ],
+    "GE": [
+      "GP",
+      "GQ"
+    ],
+    "GF": [
+      "GG"
+    ],
+    "GG": [
+      "GH"
+    ],
+    "GH": [
+      "GI"
+    ],
+    "GI": [],
+    "GJ": [
+      "GL"
+    ],
+    "GK": [
+      "GO"
+    ],
+    "GL": [
+      "GM"
+    ],
+    "GM": [
+      "GI"
+    ],
+    "GN": [
+      "GM"
+    ],
+    "GO": [
+      "GN"
+    ],
+    "GP": [
+      "GR"
+    ],
+    "GQ": [
+      "GT"
+    ],
+    "GR": [
+      "GS"
+    ],
+    "GS": [
+      "GI"
+    ],
+    "GT": [
+      "GU"
+    ],
+    "GU": [
+      "GI"
+    ]
+  },
+  "constraints": {
+    "negative": [
+      {
+        "pair": [
+          "GJ",
+          "GM"
+        ]
+      }
+    ],
+    "positive": [
+      {
+        "pair": [
+          "GA",
+          "GD"
+        ]
+      }
+    ],
+    "once": [
+      {
+        "pair": [
+          "GQ",
+          "GT"
+        ]
+      }
+    ],
+    "max_once": [
+      {
+        "pair": [
+          "GK",
+          "GM"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "graph": {
+    "START": [
+      "AK"
+    ],
+    "AK": [
+      "AL"
+    ],
+    "AL": [
+      "AM"
+    ],
+    "AM": [
+      "AN",
+      "AO"
+    ],
+    "AN": [
+      "AM"
+    ],
+    "AO": [
+      "AP"
+    ],
+    "AP": [
+      "AQ"
+    ],
+    "AQ": [
+      "AR"
+    ],
+    "AR": [
+      "AS",
+      "AT"
+    ],
+    "AS": [],
+    "AT": [
+      "AU"
+    ],
+    "AU": [
+      "AV"
+    ],
+    "AV": []
+  },
+  "constraints": {
+    "negative": [
+      {
+        "pair": [
+          "AN",
+          "AT"
+        ]
+      }
+    ],
+    "positive": [
+      {
+        "pair": [
+          "AO",
+          "AV"
+        ]
+      }
+    ],
+    "once": [
+      {
+        "pair": [
+          "AN",
+          "AS"
+        ]
+      }
+    ],
+    "max_once": []
+  }
+}

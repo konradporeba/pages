@@ -1,0 +1,257 @@
+
+Step 1 | target: —
+  Move: START → B64 → B63 → B61 → B60 → B59 → B58 → B57 → B56 → B55
+  New edges: B56 → B55, B57 → B56, B58 → B57, B59 → B58, B60 → B59, B61 → B60, B63 → B61, B64 → B63, START → B64
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=9/91 | uncovered=82
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 9
+
+Step 2 | target: —
+  Move: B55 → B57 → B54 → B53 → B52 → B51 → B50
+  New edges: B51 → B50, B52 → B51, B53 → B52, B54 → B53, B55 → B57, B57 → B54
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=15/91 | uncovered=76
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 8
+
+Step 3 | target: —
+  Move: B50 → B52 → B49 → B60 → B48 → B47 → B46 → B45 → B44 → B43
+  New edges: B44 → B43, B45 → B44, B46 → B45, B47 → B46, B48 → B47, B49 → B60, B50 → B52, B52 → B49, B60 → B48
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=24/91 | uncovered=67
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 8
+
+Step 4 | target: —
+  Move: B43 → B45 → B42 → B41 → B40 → B39 → B38
+  New edges: B39 → B38, B40 → B39, B41 → B40, B42 → B41, B43 → B45, B45 → B42
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=30/91 | uncovered=61
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 7
+
+Step 5 | target: —
+  Move: B38 → B40 → B37 → B48 → B36 → B35 → B34 → B33 → B32 → B31
+  New edges: B32 → B31, B33 → B32, B34 → B33, B35 → B34, B36 → B35, B37 → B48, B38 → B40, B40 → B37, B48 → B36
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=39/91 | uncovered=52
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 7
+
+Step 6 | target: —
+  Move: B31 → B33 → B30 → B29 → B28 → B27 → B26
+  New edges: B27 → B26, B28 → B27, B29 → B28, B30 → B29, B31 → B33, B33 → B30
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=45/91 | uncovered=46
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 6
+
+Step 7 | target: —
+  Move: B26 → B28 → B25 → B36 → B24 → B23 → B18 → B17 → B16 → B15 → B14
+  New edges: B15 → B14, B16 → B15, B17 → B16, B18 → B17, B23 → B18, B24 → B23, B25 → B36, B26 → B28, B28 → B25, B36 → B24
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=55/91 | uncovered=36
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 8 | target: —
+  Move: B14 → B16 → B13 → B24 → B12 → B11 → B6 → B5 → B4 → B3 → B2
+  New edges: B11 → B6, B12 → B11, B13 → B24, B14 → B16, B16 → B13, B24 → B12, B3 → B2, B4 → B3, B5 → B4, B6 → B5
+  Completed tests: covered=0/91 | uncovered=91
+  Including the current path: covered=65/91 | uncovered=26
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 4
+
+Step 9 | target: —
+  Move: B2 → B4 → B1 → B12 → B0
+  New edges: B1 → B12, B12 → B0, B2 → B4, B4 → B1
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=69/91 | uncovered=22
+  Violations (suite + current path): 0 | negative=0
+  Test completed: START → B64 → B63 → B61 → B60 → B59 → B58 → B57 → B56 → B55 → B57 → B54 → B53 → B52 → B51 → B50 → B52 → B49 → B60 → B48 → B47 → B46 → B45 → B44 → B43 → B45 → B42 → B41 → B40 → B39 → B38 → B40 → B37 → B48 → B36 → B35 → B34 → B33 → B32 → B31 → B33 → B30 → B29 → B28 → B27 → B26 → B28 → B25 → B36 → B24 → B23 → B18 → B17 → B16 → B15 → B14 → B16 → B13 → B24 → B12 → B11 → B6 → B5 → B4 → B3 → B2 → B4 → B1 → B12 → B0
+
+Step 10 | target: —
+  Move: START → B64 → B62 → B61 → B60 → B59 → B54 → B49
+  New edges: B54 → B49, B59 → B54, B62 → B61, B64 → B62
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=73/91 | uncovered=18
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 6
+
+Step 11 | target: —
+  Move: B49 → B60 → B48 → B47 → B42 → B37
+  New edges: B42 → B37, B47 → B42
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=75/91 | uncovered=16
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 12 | target: —
+  Move: B37 → B48 → B36 → B35 → B30 → B25
+  New edges: B30 → B25, B35 → B30
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=77/91 | uncovered=14
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 4
+
+Step 13 | target: —
+  Move: B25 → B36 → B24 → B23 → B22 → B21
+  New edges: B22 → B21, B23 → B22
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=79/91 | uncovered=12
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 14 | target: —
+  Move: B21 → B20 → B19
+  New edges: B20 → B19, B21 → B20
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=81/91 | uncovered=10
+  Violations (suite + current path): 1 | negative=1
+  Hops to the end: 6
+
+Step 15 | target: —
+  Move: B19 → B21 → B18 → B13 → B24 → B12 → B11 → B10 → B9 → B8 → B7
+  New edges: B10 → B9, B11 → B10, B18 → B13, B19 → B21, B21 → B18, B8 → B7, B9 → B8
+  Completed tests: covered=69/91 | uncovered=22
+  Including the current path: covered=88/91 | uncovered=3
+  Violations (suite + current path): 1 | negative=1
+  Hops to the end: 5
+
+Step 16 | target: —
+  Move: B7 → B9 → B6 → B1 → B12 → B0
+  New edges: B6 → B1, B7 → B9, B9 → B6
+  Completed tests: covered=91/91 | uncovered=0
+  Including the current path: covered=91/91 | uncovered=0
+  Violations (suite + current path): 1 | negative=1
+  Test completed: START → B64 → B62 → B61 → B60 → B59 → B54 → B49 → B60 → B48 → B47 → B42 → B37 → B48 → B36 → B35 → B30 → B25 → B36 → B24 → B23 → B22 → B21 → B20 → B19 → B21 → B18 → B13 → B24 → B12 → B11 → B10 → B9 → B8 → B7 → B9 → B6 → B1 → B12 → B0
+
+================================================================
+END: coverage_complete | steps: 16
+Completed suite coverage: 91/91 | uncovered=0
+Violations in the completed suite: 1
+  negative: 1
+    B21 → B19: 1
+
+TEST SUITE (2 tests):
+  T01: START → B64 → B63 → B61 → B60 → B59 → B58 → B57 → B56 → B55 → B57 → B54 → B53 → B52 → B51 → B50 → B52 → B49 → B60 → B48 → B47 → B46 → B45 → B44 → B43 → B45 → B42 → B41 → B40 → B39 → B38 → B40 → B37 → B48 → B36 → B35 → B34 → B33 → B32 → B31 → B33 → B30 → B29 → B28 → B27 → B26 → B28 → B25 → B36 → B24 → B23 → B18 → B17 → B16 → B15 → B14 → B16 → B13 → B24 → B12 → B11 → B6 → B5 → B4 → B3 → B2 → B4 → B1 → B12 → B0
+  T02: START → B64 → B62 → B61 → B60 → B59 → B54 → B49 → B60 → B48 → B47 → B42 → B37 → B48 → B36 → B35 → B30 → B25 → B36 → B24 → B23 → B22 → B21 → B20 → B19 → B21 → B18 → B13 → B24 → B12 → B11 → B10 → B9 → B8 → B7 → B9 → B6 → B1 → B12 → B0
+
+TEST SUITE TO COPY (JSON):
+[
+  [
+    "START",
+    "B64",
+    "B63",
+    "B61",
+    "B60",
+    "B59",
+    "B58",
+    "B57",
+    "B56",
+    "B55",
+    "B57",
+    "B54",
+    "B53",
+    "B52",
+    "B51",
+    "B50",
+    "B52",
+    "B49",
+    "B60",
+    "B48",
+    "B47",
+    "B46",
+    "B45",
+    "B44",
+    "B43",
+    "B45",
+    "B42",
+    "B41",
+    "B40",
+    "B39",
+    "B38",
+    "B40",
+    "B37",
+    "B48",
+    "B36",
+    "B35",
+    "B34",
+    "B33",
+    "B32",
+    "B31",
+    "B33",
+    "B30",
+    "B29",
+    "B28",
+    "B27",
+    "B26",
+    "B28",
+    "B25",
+    "B36",
+    "B24",
+    "B23",
+    "B18",
+    "B17",
+    "B16",
+    "B15",
+    "B14",
+    "B16",
+    "B13",
+    "B24",
+    "B12",
+    "B11",
+    "B6",
+    "B5",
+    "B4",
+    "B3",
+    "B2",
+    "B4",
+    "B1",
+    "B12",
+    "B0"
+  ],
+  [
+    "START",
+    "B64",
+    "B62",
+    "B61",
+    "B60",
+    "B59",
+    "B54",
+    "B49",
+    "B60",
+    "B48",
+    "B47",
+    "B42",
+    "B37",
+    "B48",
+    "B36",
+    "B35",
+    "B30",
+    "B25",
+    "B36",
+    "B24",
+    "B23",
+    "B22",
+    "B21",
+    "B20",
+    "B19",
+    "B21",
+    "B18",
+    "B13",
+    "B24",
+    "B12",
+    "B11",
+    "B10",
+    "B9",
+    "B8",
+    "B7",
+    "B9",
+    "B6",
+    "B1",
+    "B12",
+    "B0"
+  ]
+]

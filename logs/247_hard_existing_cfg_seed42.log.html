@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>247 hard</title>
+<style>
+:root { color-scheme: light; --ink: #1c1c1c; --muted: #5c5c5c; --line: #e4e4e4; --bg: #fafafa; --green: #1f7a4d; --green-soft: #e7f4ec; --amber: #8a5a00; --amber-soft: #fff6e5; --red: #9d2c2c; --red-soft: #fdecec; --track: #ececec; --total: #b9b9b9; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: white; }
+header, main, footer { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+header { padding-top: 28px; }
+nav { display: flex; gap: 16px; margin: 8px 0 0; }
+nav a { color: var(--ink); }
+h1 { font-size: 28px; line-height: 1.2; margin: 12px 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+p, li { color: var(--ink); }
+.muted, figcaption, footer { color: var(--muted); font-size: 14px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+.stat { background: var(--bg); padding: 14px 16px; }
+.stat b { display: block; font-size: 28px; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+.note { background: var(--amber-soft); padding: 12px 14px; margin: 16px 0 8px; }
+.note strong { display: block; margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.ok td { background: var(--green-soft); }
+tr.warn td { background: var(--amber-soft); }
+tr.bad td { background: var(--red-soft); }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; }
+.tag.ok { background: #d8efe2; color: var(--green); }
+.tag.warn { background: #ffe8bf; color: var(--amber); }
+.tag.bad { background: #f8d4d4; color: var(--red); }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
+.swatch { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.swatch.covered { background: var(--green); }
+.swatch.total { background: var(--total); }
+.swatch.time { background: #3d5a80; }
+.swatch.walk { background: var(--amber); }
+.chart { display: grid; gap: 8px; margin: 8px 0 4px; }
+.row { display: grid; grid-template-columns: 42px 1fr; gap: 8px; align-items: center; }
+.ylab { font-size: 13px; color: var(--muted); text-align: right; }
+.tracks { display: grid; gap: 3px; }
+.track { background: var(--track); height: 14px; }
+.bar { height: 14px; }
+.bar.covered { background: var(--green); }
+.bar.total { background: var(--total); }
+.bar.time { background: #3d5a80; }
+.bar.walk { background: var(--amber); }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+a { color: #1d4e89; }
+footer { padding: 28px 20px 40px; }
+pre { white-space: pre-wrap; word-break: break-word; font: 13px/1.45 ui-monospace, monospace; background: var(--bg); padding: 16px; }
+ul.files { padding-left: 18px; }
+ul.files li { margin: 4px 0; }
+@media (max-width: 800px) {
+  .stats, .columns { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="../index.html">Results</a>
+  <a href="../logs.html">Logs</a>
+  <a href="../configs.html">Configs</a>
+  <a href="../dataset.html">CPT dataset</a>
+</nav>
+</header>
+<main>
+<h1>247 hard</h1><p><a href="247_hard_existing_cfg_seed42.log">Raw log</a> · <a href="../configs/247_hard_existing_cfg_seed42.yaml">Config</a> · <a href="../data/cpt/C_Hard/247_hard_existing_cfg.json">Graph JSON</a></p><pre>
+Step 1 | target: —
+  Move: START → B77 → B75 → B68 → B72 → B71 → B69 → B62 → B66 → B65 → B63 → B56 → B60 → B58 → B57 → B50 → B54 → B53 → B51 → B44 → B48 → B46 → B45 → B38 → B42 → B40 → B39 → B32 → B36 → B34 → B33 → B26 → B30 → B28 → B27 → B20 → B24 → B22 → B21 → B14 → B18 → B16 → B15 → B8 → B12 → B11 → B9 → B2
+  New edges: B11 → B9, B12 → B11, B14 → B18, B15 → B8, B16 → B15, B18 → B16, B20 → B24, B21 → B14, B22 → B21, B24 → B22, B26 → B30, B27 → B20, B28 → B27, B30 → B28, B32 → B36, B33 → B26, B34 → B33, B36 → B34, B38 → B42, B39 → B32, B40 → B39, B42 → B40, B44 → B48, B45 → B38, B46 → B45, B48 → B46, B50 → B54, B51 → B44, B53 → B51, B54 → B53, B56 → B60, B57 → B50, B58 → B57, B60 → B58, B62 → B66, B63 → B56, B65 → B63, B66 → B65, B68 → B72, B69 → B62, B71 → B69, B72 → B71, B75 → B68, B77 → B75, B8 → B12, B9 → B2, START → B77
+  Completed tests: covered=0/104 | uncovered=104
+  Including the current path: covered=47/104 | uncovered=57
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 2 | target: —
+  Move: B2 → B6 → B4 → B3 → B1 → B0
+  New edges: B1 → B0, B2 → B6, B3 → B1, B4 → B3, B6 → B4
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=52/104 | uncovered=52
+  Violations (suite + current path): 0 | negative=0
+  Test completed: START → B77 → B75 → B68 → B72 → B71 → B69 → B62 → B66 → B65 → B63 → B56 → B60 → B58 → B57 → B50 → B54 → B53 → B51 → B44 → B48 → B46 → B45 → B38 → B42 → B40 → B39 → B32 → B36 → B34 → B33 → B26 → B30 → B28 → B27 → B20 → B24 → B22 → B21 → B14 → B18 → B16 → B15 → B8 → B12 → B11 → B9 → B2 → B6 → B4 → B3 → B1 → B0
+
+Step 3 | target: —
+  Move: START → B77 → B76
+  New edges: B77 → B76
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=53/104 | uncovered=51
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 51
+
+Step 4 | target: —
+  Move: B76 → B75 → B74
+  New edges: B75 → B74, B76 → B75
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=55/104 | uncovered=49
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 50
+
+Step 5 | target: —
+  Move: B74 → B68 → B73
+  New edges: B68 → B73, B74 → B68
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=57/104 | uncovered=47
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 49
+
+Step 6 | target: —
+  Move: B73 → B72 → B70 → B69 → B62
+  New edges: B70 → B69, B72 → B70, B73 → B72
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=60/104 | uncovered=44
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 45
+
+Step 7 | target: —
+  Move: B62 → B67
+  New edges: B62 → B67
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=61/104 | uncovered=43
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 45
+
+Step 8 | target: —
+  Move: B67 → B66 → B64 → B63 → B56 → B61
+  New edges: B56 → B61, B64 → B63, B66 → B64, B67 → B66
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=65/104 | uncovered=39
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 41
+
+Step 9 | target: —
+  Move: B61 → B60 → B58 → B57 → B50
+  New edges: B61 → B60
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=66/104 | uncovered=38
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 37
+
+Step 10 | target: —
+  Move: B50 → B55
+  New edges: B50 → B55
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=67/104 | uncovered=37
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 37
+
+Step 11 | target: —
+  Move: B55 → B54 → B52
+  New edges: B54 → B52, B55 → B54
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=69/104 | uncovered=35
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 35
+
+Step 12 | target: —
+  Move: B52 → B51 → B44 → B49
+  New edges: B44 → B49, B52 → B51
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=71/104 | uncovered=33
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 33
+
+Step 13 | target: —
+  Move: B49 → B48 → B47 → B45 → B38 → B43
+  New edges: B38 → B43, B47 → B45, B48 → B47, B49 → B48
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=75/104 | uncovered=29
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 29
+
+Step 14 | target: —
+  Move: B43 → B42 → B41 → B39 → B32 → B37
+  New edges: B32 → B37, B41 → B39, B42 → B41, B43 → B42
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=79/104 | uncovered=25
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 25
+
+Step 15 | target: —
+  Move: B37 → B36 → B35 → B33 → B26 → B31
+  New edges: B26 → B31, B35 → B33, B36 → B35, B37 → B36
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=83/104 | uncovered=21
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 21
+
+Step 16 | target: —
+  Move: B31 → B30 → B29 → B27 → B20 → B25
+  New edges: B20 → B25, B29 → B27, B30 → B29, B31 → B30
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=87/104 | uncovered=17
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 17
+
+Step 17 | target: —
+  Move: B25 → B24 → B22 → B21 → B14 → B19
+  New edges: B14 → B19, B25 → B24
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=89/104 | uncovered=15
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 13
+
+Step 18 | target: —
+  Move: B19 → B18 → B17 → B15 → B8 → B13
+  New edges: B17 → B15, B18 → B17, B19 → B18, B8 → B13
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=93/104 | uncovered=11
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 9
+
+Step 19 | target: —
+  Move: B13 → B12 → B10
+  New edges: B12 → B10, B13 → B12
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=95/104 | uncovered=9
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 7
+
+Step 20 | target: —
+  Move: B10 → B9 → B2 → B7
+  New edges: B10 → B9, B2 → B7
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=97/104 | uncovered=7
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 5
+
+Step 21 | target: —
+  Move: B7 → B6 → B5 → B3
+  New edges: B5 → B3, B6 → B5, B7 → B6
+  Completed tests: covered=52/104 | uncovered=52
+  Including the current path: covered=100/104 | uncovered=4
+  Violations (suite + current path): 0 | negative=0
+  Hops to the end: 2
+
+Step 22 | target: —
+  Move: B3 → B1 → B0
+  New edges: —
+  Completed tests: covered=100/104 | uncovered=4
+  Including the current path: covered=100/104 | uncovered=4
+  Violations (suite + current path): 0 | negative=0
+  Test completed: START → B77 → B76 → B75 → B74 → B68 → B73 → B72 → B70 → B69 → B62 → B67 → B66 → B64 → B63 → B56 → B61 → B60 → B58 → B57 → B50 → B55 → B54 → B52 → B51 → B44 → B49 → B48 → B47 → B45 → B38 → B43 → B42 → B41 → B39 → B32 → B37 → B36 → B35 → B33 → B26 → B31 → B30 → B29 → B27 → B20 → B25 → B24 → B22 → B21 → B14 → B19 → B18 → B17 → B15 → B8 → B13 → B12 → B10 → B9 → B2 → B7 → B6 → B5 → B3 → B1 → B0
+
+Step 23 | target: B23 → B21
+  Move: START → B77 → B75 → B68 → B72 → B71 → B69 → B62 → B66 → B65 → B63 → B56 → B60 → B59 → B57 → B50 → B54 → B53 → B51 → B44 → B48 → B46 → B45 → B38 → B42 → B40 → B39 → B32 → B36 → B35 → B33 → B26 → B30 → B29 → B27 → B20 → B24 → B23 → B21 → B14 → B18 → B16 → B15 → B8 → B12 → B11 → B9 → B2 → B6 → B5 → B3 → B1 → B0
+  New edges: B23 → B21, B24 → B23, B59 → B57, B60 → B59
+  Completed tests: covered=104/104 | uncovered=0
+  Including the current path: covered=104/104 | uncovered=0
+  Violations (suite + current path): 2 | negative=2
+  Test completed: START → B77 → B75 → B68 → B72 → B71 → B69 → B62 → B66 → B65 → B63 → B56 → B60 → B59 → B57 → B50 → B54 → B53 → B51 → B44 → B48 → B46 → B45 → B38 → B42 → B40 → B39 → B32 → B36 → B35 → B33 → B26 → B30 → B29 → B27 → B20 → B24 → B23 → B21 → B14 → B18 → B16 → B15 → B8 → B12 → B11 → B9 → B2 → B6 → B5 → B3 → B1 → B0
+
+================================================================
+END: coverage_complete | steps: 23
+Completed suite coverage: 104/104 | uncovered=0
+Violations in the completed suite: 2
+  negative: 2
+    B59 → B1: 1
+    B69 → B23: 1
+
+TEST SUITE (3 tests):
+  T01: START → B77 → B75 → B68 → B72 → B71 → B69 → B62 → B66 → B65 → B63 → B56 → B60 → B58 → B57 → B50 → B54 → B53 → B51 → B44 → B48 → B46 → B45 → B38 → B42 → B40 → B39 → B32 → B36 → B34 → B33 → B26 → B30 → B28 → B27 → B20 → B24 → B22 → B21 → B14 → B18 → B16 → B15 → B8 → B12 → B11 → B9 → B2 → B6 → B4 → B3 → B1 → B0
+  T02: START → B77 → B76 → B75 → B74 → B68 → B73 → B72 → B70 → B69 → B62 → B67 → B66 → B64 → B63 → B56 → B61 → B60 → B58 → B57 → B50 → B55 → B54 → B52 → B51 → B44 → B49 → B48 → B47 → B45 → B38 → B43 → B42 → B41 → B39 → B32 → B37 → B36 → B35 → B33 → B26 → B31 → B30 → B29 → B27 → B20 → B25 → B24 → B22 → B21 → B14 → B19 → B18 → B17 → B15 → B8 → B13 → B12 → B10 → B9 → B2 → B7 → B6 → B5 → B3 → B1 → B0
+  T03: START → B77 → B75 → B68 → B72 → B71 → B69 → B62 → B66 → B65 → B63 → B56 → B60 → B59 → B57 → B50 → B54 → B53 → B51 → B44 → B48 → B46 → B45 → B38 → B42 → B40 → B39 → B32 → B36 → B35 → B33 → B26 → B30 → B29 → B27 → B20 → B24 → B23 → B21 → B14 → B18 → B16 → B15 → B8 → B12 → B11 → B9 → B2 → B6 → B5 → B3 → B1 → B0
+
+TEST SUITE TO COPY (JSON):
+[
+  [
+    &quot;START&quot;,
+    &quot;B77&quot;,
+    &quot;B75&quot;,
+    &quot;B68&quot;,
+    &quot;B72&quot;,
+    &quot;B71&quot;,
+    &quot;B69&quot;,
+    &quot;B62&quot;,
+    &quot;B66&quot;,
+    &quot;B65&quot;,
+    &quot;B63&quot;,
+    &quot;B56&quot;,
+    &quot;B60&quot;,
+    &quot;B58&quot;,
+    &quot;B57&quot;,
+    &quot;B50&quot;,
+    &quot;B54&quot;,
+    &quot;B53&quot;,
+    &quot;B51&quot;,
+    &quot;B44&quot;,
+    &quot;B48&quot;,
+    &quot;B46&quot;,
+    &quot;B45&quot;,
+    &quot;B38&quot;,
+    &quot;B42&quot;,
+    &quot;B40&quot;,
+    &quot;B39&quot;,
+    &quot;B32&quot;,
+    &quot;B36&quot;,
+    &quot;B34&quot;,
+    &quot;B33&quot;,
+    &quot;B26&quot;,
+    &quot;B30&quot;,
+    &quot;B28&quot;,
+    &quot;B27&quot;,
+    &quot;B20&quot;,
+    &quot;B24&quot;,
+    &quot;B22&quot;,
+    &quot;B21&quot;,
+    &quot;B14&quot;,
+    &quot;B18&quot;,
+    &quot;B16&quot;,
+    &quot;B15&quot;,
+    &quot;B8&quot;,
+    &quot;B12&quot;,
+    &quot;B11&quot;,
+    &quot;B9&quot;,
+    &quot;B2&quot;,
+    &quot;B6&quot;,
+    &quot;B4&quot;,
+    &quot;B3&quot;,
+    &quot;B1&quot;,
+    &quot;B0&quot;
+  ],
+  [
+    &quot;START&quot;,
+    &quot;B77&quot;,
+    &quot;B76&quot;,
+    &quot;B75&quot;,
+    &quot;B74&quot;,
+    &quot;B68&quot;,
+    &quot;B73&quot;,
+    &quot;B72&quot;,
+    &quot;B70&quot;,
+    &quot;B69&quot;,
+    &quot;B62&quot;,
+    &quot;B67&quot;,
+    &quot;B66&quot;,
+    &quot;B64&quot;,
+    &quot;B63&quot;,
+    &quot;B56&quot;,
+    &quot;B61&quot;,
+    &quot;B60&quot;,
+    &quot;B58&quot;,
+    &quot;B57&quot;,
+    &quot;B50&quot;,
+    &quot;B55&quot;,
+    &quot;B54&quot;,
+    &quot;B52&quot;,
+    &quot;B51&quot;,
+    &quot;B44&quot;,
+    &quot;B49&quot;,
+    &quot;B48&quot;,
+    &quot;B47&quot;,
+    &quot;B45&quot;,
+    &quot;B38&quot;,
+    &quot;B43&quot;,
+    &quot;B42&quot;,
+    &quot;B41&quot;,
+    &quot;B39&quot;,
+    &quot;B32&quot;,
+    &quot;B37&quot;,
+    &quot;B36&quot;,
+    &quot;B35&quot;,
+    &quot;B33&quot;,
+    &quot;B26&quot;,
+    &quot;B31&quot;,
+    &quot;B30&quot;,
+    &quot;B29&quot;,
+    &quot;B27&quot;,
+    &quot;B20&quot;,
+    &quot;B25&quot;,
+    &quot;B24&quot;,
+    &quot;B22&quot;,
+    &quot;B21&quot;,
+    &quot;B14&quot;,
+    &quot;B19&quot;,
+    &quot;B18&quot;,
+    &quot;B17&quot;,
+    &quot;B15&quot;,
+    &quot;B8&quot;,
+    &quot;B13&quot;,
+    &quot;B12&quot;,
+    &quot;B10&quot;,
+    &quot;B9&quot;,
+    &quot;B2&quot;,
+    &quot;B7&quot;,
+    &quot;B6&quot;,
+    &quot;B5&quot;,
+    &quot;B3&quot;,
+    &quot;B1&quot;,
+    &quot;B0&quot;
+  ],
+  [
+    &quot;START&quot;,
+    &quot;B77&quot;,
+    &quot;B75&quot;,
+    &quot;B68&quot;,
+    &quot;B72&quot;,
+    &quot;B71&quot;,
+    &quot;B69&quot;,
+    &quot;B62&quot;,
+    &quot;B66&quot;,
+    &quot;B65&quot;,
+    &quot;B63&quot;,
+    &quot;B56&quot;,
+    &quot;B60&quot;,
+    &quot;B59&quot;,
+    &quot;B57&quot;,
+    &quot;B50&quot;,
+    &quot;B54&quot;,
+    &quot;B53&quot;,
+    &quot;B51&quot;,
+    &quot;B44&quot;,
+    &quot;B48&quot;,
+    &quot;B46&quot;,
+    &quot;B45&quot;,
+    &quot;B38&quot;,
+    &quot;B42&quot;,
+    &quot;B40&quot;,
+    &quot;B39&quot;,
+    &quot;B32&quot;,
+    &quot;B36&quot;,
+    &quot;B35&quot;,
+    &quot;B33&quot;,
+    &quot;B26&quot;,
+    &quot;B30&quot;,
+    &quot;B29&quot;,
+    &quot;B27&quot;,
+    &quot;B20&quot;,
+    &quot;B24&quot;,
+    &quot;B23&quot;,
+    &quot;B21&quot;,
+    &quot;B14&quot;,
+    &quot;B18&quot;,
+    &quot;B16&quot;,
+    &quot;B15&quot;,
+    &quot;B8&quot;,
+    &quot;B12&quot;,
+    &quot;B11&quot;,
+    &quot;B9&quot;,
+    &quot;B2&quot;,
+    &quot;B6&quot;,
+    &quot;B5&quot;,
+    &quot;B3&quot;,
+    &quot;B1&quot;,
+    &quot;B0&quot;
+  ]
+]
+</pre>
+</main>
+<footer>Source: negative-constraint runs on 3 Oct 2026. Seed 42. Model typesafe/jev-router via OpenRouter chat completions. Constraint group: negative.</footer>
+</body>
+</html>

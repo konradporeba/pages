@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jev Router negative-constraint runs</title>
+<style>
+:root { color-scheme: light; --ink: #1c1c1c; --muted: #5c5c5c; --line: #e4e4e4; --bg: #fafafa; --green: #1f7a4d; --green-soft: #e7f4ec; --amber: #8a5a00; --amber-soft: #fff6e5; --red: #9d2c2c; --red-soft: #fdecec; --track: #ececec; --total: #b9b9b9; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: white; }
+header, main, footer { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+header { padding-top: 28px; }
+nav { display: flex; gap: 16px; margin: 8px 0 0; }
+nav a { color: var(--ink); }
+h1 { font-size: 28px; line-height: 1.2; margin: 12px 0 8px; }
+h2 { font-size: 20px; margin: 28px 0 8px; }
+p, li { color: var(--ink); }
+.muted, figcaption, footer { color: var(--muted); font-size: 14px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+.stat { background: var(--bg); padding: 14px 16px; }
+.stat b { display: block; font-size: 28px; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+.note { background: var(--amber-soft); padding: 12px 14px; margin: 16px 0 8px; }
+.note strong { display: block; margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.ok td { background: var(--green-soft); }
+tr.warn td { background: var(--amber-soft); }
+tr.bad td { background: var(--red-soft); }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; }
+.tag.ok { background: #d8efe2; color: var(--green); }
+.tag.warn { background: #ffe8bf; color: var(--amber); }
+.tag.bad { background: #f8d4d4; color: var(--red); }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
+.swatch { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.swatch.covered { background: var(--green); }
+.swatch.total { background: var(--total); }
+.swatch.time { background: #3d5a80; }
+.swatch.walk { background: var(--amber); }
+.chart { display: grid; gap: 8px; margin: 8px 0 4px; }
+.row { display: grid; grid-template-columns: 42px 1fr; gap: 8px; align-items: center; }
+.ylab { font-size: 13px; color: var(--muted); text-align: right; }
+.tracks { display: grid; gap: 3px; }
+.track { background: var(--track); height: 14px; }
+.bar { height: 14px; }
+.bar.covered { background: var(--green); }
+.bar.total { background: var(--total); }
+.bar.time { background: #3d5a80; }
+.bar.walk { background: var(--amber); }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+a { color: #1d4e89; }
+footer { padding: 28px 20px 40px; }
+pre { white-space: pre-wrap; word-break: break-word; font: 13px/1.45 ui-monospace, monospace; background: var(--bg); padding: 16px; }
+ul.files { padding-left: 18px; }
+ul.files li { margin: 4px 0; }
+@media (max-width: 800px) {
+  .stats, .columns { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="index.html">Results</a>
+  <a href="logs.html">Logs</a>
+  <a href="configs.html">Configs</a>
+  <a href="dataset.html">CPT dataset</a>
+</nav>
+</header>
+<main>
+
+<h1>Jev Router on the negative-constraint graphs</h1>
+<p class="muted">Nine workflows with one start (<code>START</code>) and one end (<code>B0</code>). Each run used OpenRouter chat completions, at most 1000 actions, and seed 42. Three artificial graphs were not run because each has many end nodes. This page is a static dump of the results canvas.</p>
+<section class="stats">
+  <div class="stat"><b>5 / 9</b><span>Graphs fully covered</span></div>
+  <div class="stat"><b>1 / 9</b><span>Full cover, zero violations</span></div>
+  <div class="stat"><b>4</b><span>Runs stopped before a report</span></div>
+  <div class="stat"><b>183</b><span>Only clean full cover</span></div>
+</section>
+<div class="note"><strong>Three runs died on a single request.</strong>
+The chat client gives up after 180 seconds. Graph 125 was then at 72 of 78 edges in finished tests, and 74 of 78 if the open path is counted. Graphs 223 and 242 stopped the same way, at 116/148 and 72/100. None of these hit the 1000-step limit, and none wrote an END report. Graph 289 stopped because the model returned a paragraph instead of an action id.</div>
+<h2>Covered edges against graph size</h2>
+<p class="muted">Finished tests only. For the four runs that stopped early, this is the last step that printed, not a final report. The upper bar is covered edges. The lower bar is edges in the graph. The scale is the largest graph, 148 edges.</p>
+<div class="legend"><span><i class="swatch covered"></i>Covered edges</span><span><i class="swatch total"></i>Edges in the graph</span></div>
+<div class="chart">
+<div class="row"><div class="ylab">183</div><div class="tracks"><div class="track"><div class="bar covered" style="width:45.95%"></div></div><div class="track"><div class="bar total" style="width:45.95%"></div></div></div></div>
+<div class="row"><div class="ylab">247</div><div class="tracks"><div class="track"><div class="bar covered" style="width:70.27%"></div></div><div class="track"><div class="bar total" style="width:70.27%"></div></div></div></div>
+<div class="row"><div class="ylab">255</div><div class="tracks"><div class="track"><div class="bar covered" style="width:59.46%"></div></div><div class="track"><div class="bar total" style="width:59.46%"></div></div></div></div>
+<div class="row"><div class="ylab">257</div><div class="tracks"><div class="track"><div class="bar covered" style="width:61.49%"></div></div><div class="track"><div class="bar total" style="width:61.49%"></div></div></div></div>
+<div class="row"><div class="ylab">209</div><div class="tracks"><div class="track"><div class="bar covered" style="width:81.76%"></div></div><div class="track"><div class="bar total" style="width:81.76%"></div></div></div></div>
+<div class="row"><div class="ylab">125</div><div class="tracks"><div class="track"><div class="bar covered" style="width:48.65%"></div></div><div class="track"><div class="bar total" style="width:52.70%"></div></div></div></div>
+<div class="row"><div class="ylab">223</div><div class="tracks"><div class="track"><div class="bar covered" style="width:78.38%"></div></div><div class="track"><div class="bar total" style="width:100.00%"></div></div></div></div>
+<div class="row"><div class="ylab">242</div><div class="tracks"><div class="track"><div class="bar covered" style="width:48.65%"></div></div><div class="track"><div class="bar total" style="width:67.57%"></div></div></div></div>
+<div class="row"><div class="ylab">289</div><div class="tracks"><div class="track"><div class="bar covered" style="width:45.95%"></div></div><div class="track"><div class="bar total" style="width:69.59%"></div></div></div></div>
+</div>
+<div class="columns">
+<section>
+<h2>Minutes until the run stopped</h2>
+<p class="muted">Wall clock from the config file being written to the log being closed. Timed-out runs include the 180-second wait. Scale: 46.7 minutes.</p>
+<div class="legend"><span><i class="swatch time"></i>Minutes</span></div>
+<div class="chart">
+<div class="row"><div class="ylab">183</div><div class="track"><div class="bar time" style="width:21.84%"></div></div></div>
+<div class="row"><div class="ylab">247</div><div class="track"><div class="bar time" style="width:5.78%"></div></div></div>
+<div class="row"><div class="ylab">255</div><div class="track"><div class="bar time" style="width:6.42%"></div></div></div>
+<div class="row"><div class="ylab">257</div><div class="track"><div class="bar time" style="width:4.93%"></div></div></div>
+<div class="row"><div class="ylab">209</div><div class="track"><div class="bar time" style="width:73.45%"></div></div></div>
+<div class="row"><div class="ylab">125</div><div class="track"><div class="bar time" style="width:100.00%"></div></div></div>
+<div class="row"><div class="ylab">223</div><div class="track"><div class="bar time" style="width:17.34%"></div></div></div>
+<div class="row"><div class="ylab">242</div><div class="track"><div class="bar time" style="width:79.44%"></div></div></div>
+<div class="row"><div class="ylab">289</div><div class="track"><div class="bar time" style="width:37.04%"></div></div></div>
+</div>
+</section>
+<section>
+<h2>Extra walking on finished runs</h2>
+<p class="muted">Edge traversals inside completed tests, divided by the number of distinct edges. 1.0 would cover each edge once. Sorted from least repetition to most.</p>
+<div class="legend"><span><i class="swatch walk"></i>Traversals per edge</span></div>
+<div class="chart">
+<div class="row"><div class="ylab">257</div><div class="track"><div class="bar walk" style="width:29.67%"></div></div></div><div class="row"><div class="ylab">247</div><div class="track"><div class="bar walk" style="width:40.87%"></div></div></div><div class="row"><div class="ylab">255</div><div class="track"><div class="bar walk" style="width:42.90%"></div></div></div><div class="row"><div class="ylab">209</div><div class="track"><div class="bar walk" style="width:65.50%"></div></div></div><div class="row"><div class="ylab">183</div><div class="track"><div class="bar walk" style="width:100.00%"></div></div></div>
+</div>
+</section>
+</div>
+<h2>Each run</h2>
+<table>
+<thead><tr>
+<th>Graph</th><th class="num">Edges</th><th class="num">Covered</th><th class="num">Steps</th>
+<th class="num">Tests</th><th class="num">Violations</th><th class="num">Walk / edge</th>
+<th class="num">Minutes</th><th>How it stopped</th>
+</tr></thead>
+<tbody>
+<tr class="ok"><td><a href="data/cpt/B_Medium/183_medium_existing_cfg.json">183 medium</a></td><td class="num">68</td><td class="num">68 (100%)</td><td class="num">34</td><td class="num">12</td><td class="num">0</td><td class="num">4.00</td><td class="num">10.2</td><td><span class="tag ok">full cover, clean</span><br><a href="logs/183_medium_existing_cfg_seed42.log.html">log</a> · <a href="configs/183_medium_existing_cfg_seed42.yaml">config</a></td></tr><tr class="warn"><td><a href="data/cpt/C_Hard/247_hard_existing_cfg.json">247 hard</a></td><td class="num">104</td><td class="num">104 (100%)</td><td class="num">23</td><td class="num">3</td><td class="num">2</td><td class="num">1.63</td><td class="num">2.7</td><td><span class="tag warn">full cover</span><br><a href="logs/247_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/247_hard_existing_cfg_seed42.yaml">config</a></td></tr><tr class="warn"><td><a href="data/cpt/C_Hard/255_hard_existing_cfg.json">255 hard</a></td><td class="num">88</td><td class="num">88 (100%)</td><td class="num">16</td><td class="num">2</td><td class="num">1</td><td class="num">1.72</td><td class="num">3.0</td><td><span class="tag warn">full cover</span><br><a href="logs/255_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/255_hard_existing_cfg_seed42.yaml">config</a></td></tr><tr class="warn"><td><a href="data/cpt/C_Hard/257_hard_existing_cfg.json">257 hard</a></td><td class="num">91</td><td class="num">91 (100%)</td><td class="num">16</td><td class="num">2</td><td class="num">1</td><td class="num">1.19</td><td class="num">2.3</td><td><span class="tag warn">full cover</span><br><a href="logs/257_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/257_hard_existing_cfg_seed42.yaml">config</a></td></tr><tr class="warn"><td><a href="data/cpt/C_Hard/209_hard_existing_cfg.json">209 hard</a></td><td class="num">121</td><td class="num">121 (100%)</td><td class="num">50</td><td class="num">21</td><td class="num">6</td><td class="num">2.62</td><td class="num">34.3</td><td><span class="tag warn">full cover</span><br><a href="logs/209_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/209_hard_existing_cfg_seed42.yaml">config</a></td></tr><tr class="bad"><td><a href="data/cpt/B_Medium/125_medium_existing_cfg.json">125 medium</a></td><td class="num">78</td><td class="num">72 (92%)</td><td class="num">26</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">46.7</td><td><span class="tag bad">read timeout</span><br><a href="logs/125_medium_existing_cfg_seed42.log.html">log</a> · <a href="configs/125_medium_existing_cfg_seed42.yaml">config</a></td></tr><tr class="bad"><td><a href="data/cpt/C_Hard/223_hard_existing_cfg.json">223 hard</a></td><td class="num">148</td><td class="num">116 (78%)</td><td class="num">49</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">8.1</td><td><span class="tag bad">read timeout</span><br><a href="logs/223_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/223_hard_existing_cfg_seed42.yaml">config</a></td></tr><tr class="bad"><td><a href="data/cpt/C_Hard/242_hard_existing_cfg.json">242 hard</a></td><td class="num">100</td><td class="num">72 (72%)</td><td class="num">23</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">37.1</td><td><span class="tag bad">read timeout</span><br><a href="logs/242_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/242_hard_existing_cfg_seed42.yaml">config</a></td></tr><tr class="bad"><td><a href="data/cpt/C_Hard/289_hard_existing_cfg.json">289 hard</a></td><td class="num">103</td><td class="num">68 (66%)</td><td class="num">25</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">17.3</td><td><span class="tag bad">not an action ID</span><br><a href="logs/289_hard_existing_cfg_seed42.log.html">log</a> · <a href="configs/289_hard_existing_cfg_seed42.yaml">config</a></td></tr>
+</tbody>
+</table>
+<p class="muted">The graph name opens that workflow JSON. Coverage for 125, 223, 242, and 289 is the last printed finished-test coverage. Those logs have no final violation total.</p>
+<h2>Negative pairs on the five finished runs</h2>
+<table>
+<thead><tr><th>Graph</th><th>Pair</th><th class="num">Violations in finished tests</th></tr></thead>
+<tbody>
+<tr class="ok"><td>183</td><td>B22 → B6</td><td class="num">0</td></tr><tr class="ok"><td>183</td><td>B42 → B40</td><td class="num">0</td></tr><tr class="ok"><td>183</td><td>B7 → B11</td><td class="num">0</td></tr><tr class="bad"><td>247</td><td>B59 → B1</td><td class="num">1</td></tr><tr class="ok"><td>247</td><td>B73 → B65</td><td class="num">0</td></tr><tr class="bad"><td>247</td><td>B69 → B23</td><td class="num">1</td></tr><tr class="ok"><td>255</td><td>B19 → B11</td><td class="num">0</td></tr><tr class="ok"><td>255</td><td>B28 → B38</td><td class="num">0</td></tr><tr class="bad"><td>255</td><td>B11 → B5</td><td class="num">1</td></tr><tr class="bad"><td>257</td><td>B21 → B19</td><td class="num">1</td></tr><tr class="ok"><td>257</td><td>B19 → B2</td><td class="num">0</td></tr><tr class="ok"><td>257</td><td>B53 → B9</td><td class="num">0</td></tr><tr class="ok"><td>209</td><td>B30 → B39</td><td class="num">0</td></tr><tr class="bad"><td>209</td><td>B46 → B23</td><td class="num">4</td></tr><tr class="bad"><td>209</td><td>B85 → B58</td><td class="num">2</td></tr>
+</tbody>
+</table>
+<p class="muted">A violation is one later visit to the right node after the left node, inside the same finished test.</p>
+<h2>Not run</h2>
+<p>These three graphs were in the same negative-constraint set. Each has one start and many nodes with no outgoing edges, and a run needs a single end.</p>
+<ul class="files">
+<li><a href="data/cpt/C_Hard/293_hard_artificial.json">293</a> — 17 end nodes</li><li><a href="data/cpt/C_Hard/298_hard_artificial.json">298</a> — 47 end nodes</li><li><a href="data/cpt/C_Hard/300_hard_artificial.json">300</a> — 22 end nodes</li>
+</ul>
+
+</main>
+<footer>Source: negative-constraint runs on 3 Oct 2026. Seed 42. Model typesafe/jev-router via OpenRouter chat completions. Constraint group: negative.</footer>
+</body>
+</html>
